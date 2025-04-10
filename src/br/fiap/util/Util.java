@@ -99,6 +99,7 @@ public class Util {
         showMessageDialog(null, aux);
     }
 
+
     //metodo para pesquisar fornecedor
     private Fornecedor pesquisarFornecedor() {
         long cnpj = parseLong(showInputDialog("CNPJ do fornecedor:"));
