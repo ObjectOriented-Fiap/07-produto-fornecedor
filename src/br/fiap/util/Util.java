@@ -8,14 +8,14 @@ import br.fiap.produto.Produto;
 
 
 public class Util {
-    private Produto[] produto = new Produto[2];
-    private Fornecedor[] fornecedor = new Fornecedor[2];
+    private Produto[] produto = new Produto[5];
+    private Fornecedor[] fornecedor = new Fornecedor[5];
     private int idxProduto = 0;
     private int idxFornecedor = 0;
 
 
     //metodo do menu principal
-    public void menuPrincipal(){
+    public void menu(){
         int opcao;
         String msg = "1. Cadastrar produto \n 2. Pesquisar produto por nome \n 3.Pesquisar fornecedor por CNPJ \n 4.Finalizar";
 
@@ -32,7 +32,7 @@ public class Util {
                     pesquisarProduto();
                     break;
                 case 3:
-                    pesquisarFornecedor();
+                    pesquisar();
                     break;
                 case 4:
                     return;
@@ -41,6 +41,16 @@ public class Util {
             }
         }
 
+    }
+
+    private void pesquisar(){
+        String aux = "";
+        Fornecedor fornecedor = pesquisarFornecedor();
+        if (fornecedor != null){
+            aux += "Fornecedor: "+ fornecedor.getNome()+"\n";
+            aux += "CNPJ: "+ fornecedor.getCnpj();
+            showMessageDialog(null,aux);
+        }
     }
 
 
